@@ -1,0 +1,24 @@
+a.out: szybkie.o scalanie.o introspektywne.o main.o Testy.o
+	g++ szybkie.o scalanie.o introspektywne.o main.o Testy.o
+
+szybkie.o: szybkie.cpp szybkie.hh
+	g++ -Wall -pedantic -c szybkie.hh
+	g++ -Wall -pedantic -c szybkie.cpp
+
+scalanie.o: scalanie.cpp scalanie.hh
+	g++ -Wall -pedantic -c scalanie.hh
+	g++ -Wall -pedantic -c scalanie.cpp
+
+introspektywne.o: introspektywne.cpp introspektywne.hh
+	g++ -Wall -pedantic -c introspektywne.hh
+	g++ -Wall -pedantic -c introspektywne.cpp
+
+main.o: main.cpp
+	g++ -Wall -pedantic -c main.cpp
+
+Testy.o: Testy.cpp Testy.hh
+	g++ -Wall -pedantic -c Testy.hh
+	g++ -Wall -pedantic -c Testy.cpp
+
+clean:
+	rm -f *.o test
